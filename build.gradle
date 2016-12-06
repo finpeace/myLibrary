@@ -7,22 +7,21 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
-plugins {
+/*plugins {
     id "com.jfrog.bintray" version "1.7"
-}
+}*/
 
 allprojects {
     repositories {
         jcenter()
-        mavenCentral()
     }
 }
 
@@ -30,7 +29,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-bintray {
+/*bintray {
     user = 'sakshi'
     key = '1443971c4e0760ab2bbe7ce5b2e42d1bc103f01e'
 
@@ -59,7 +58,7 @@ bintray {
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
     }
-}
+}*/
 
 //ext {
 ////    bintrayRepo = 'myLib'

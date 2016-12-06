@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.github.dcendents.android-maven'
-//apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 //ext {
 //    bintrayRepo = 'myLib'
@@ -53,6 +53,28 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+}
+version=1.1
+bintray {
+    user = 'sakshi'
+    key = '1443971c4e0760ab2bbe7ce5b2e42d1bc103f01e'
+    pkg {
+        repo = 'myLib'
+        name = 'final-package'
+        userOrg = 'sfinpeace'
+
+        version {
+            name = '1.1.1-final'
+            desc = 'My test upload'
+            released  = new Date()
+            vcsTag = '1.0.1'
+        }
+
+        licenses = ['Apache-2.0']
+//        vcsUrl = 'https://github.com/finpeace/myLibrary.git'
+//        websiteUrl = 'https://github.com/finpeace/myLibrary'
+    }
+    configurations = ['archives']
 }
 
 
