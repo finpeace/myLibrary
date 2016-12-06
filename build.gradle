@@ -3,22 +3,86 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+bintray {
+    user = 'sakshi'
+    key = '1443971c4e0760ab2bbe7ce5b2e42d1bc103f01e'
+
+    dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
+    publish = true //[Default: false] Whether version should be auto published after an upload
+    override = false //[Default: false] Whether to override version artifacts already published
+    pkg {
+        repo = 'myLib'
+        name = 'new-package'
+        userOrg = 'sfinpeace'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/bintray/gradle-bintray-plugin.git'
+//        configurations = ['archives']
+        desc = "rejkklejrklwejrklejrklwerklwejrkl"
+        licenses = ['Apache-2.0']
+
+        version {
+            name = '1.1-Final'
+            desc = 'Gradle Bintray Plugin 1.0 final'
+            released  = new Date()
+            vcsTag = '1.0.0'
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = '12345678' //Optional. The passphrase for GPG signing'
+            }
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
+}
+
+//ext {
+////    bintrayRepo = 'myLib'
+////    bintrayName = 'my-package'
+////
+//    publishedGroupId = 'library.afinal.com.mylibrary'
+//    libraryName = 'mylibrary'
+//    artifact = 'my-package'
+//    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+////
+//    siteUrl = 'https://github.com/finpeace/myLibrary'
+//    gitUrl = 'https://github.com/finpeace/myLibrary.git'
+////
+////    libraryVersion = '1.0'
+////
+//    developerId = 'sakshi'
+//    developerName = 'sakshi'
+//    developerEmail = 'sakshi.garg@finpeace.in'
+////
+//            licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+////    allLicenses = ["Apache-2.0"]
+//}
+
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

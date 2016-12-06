@@ -1,29 +1,29 @@
 apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
 
-ext {
-    bintrayRepo = 'myLib'
-    bintrayName = 'my-package'
-
-    publishedGroupId = 'library.afinal.com.mylibrary'
-    libraryName = 'mylibrary'
-    artifact = 'my-package'
-    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
-
-    siteUrl = 'https://github.com/nuuneoi/FBLikeAndroid'
-    gitUrl = 'https://github.com/nuuneoi/FBLikeAndroid.git'
-
-    libraryVersion = '0.9.3'
-
-    libraryVersion = '0.9.3'
-
-    developerId = 'sakshi'
-    developerName = 'sakshi'
-    developerEmail = 'sakshi.garg@finpeace.in'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+//ext {
+//    bintrayRepo = 'myLib'
+//    bintrayName = 'my-package'
+//
+//    publishedGroupId = 'library.afinal.com.mylibrary'
+//    libraryName = 'mylibrary'
+//    artifact = 'my-package'
+//    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+//
+//    siteUrl = 'https://github.com/finpeace/myLibrary'
+//    gitUrl = 'https://github.com/finpeace/myLibrary.git'
+//
+//    libraryVersion = '1.0'
+//
+//    developerId = 'sakshi'
+//    developerName = 'sakshi'
+//    developerEmail = 'sakshi.garg@finpeace.in'
+//
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//    allLicenses = ["Apache-2.0"]
+//}
 
 android {
     compileSdkVersion 24
@@ -55,5 +55,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-apply from: 'https://raw.githubusercontent.com/sfinpeace/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/sfinpeace/JCenter/master/bintrayv1.gradle'
+
+
+
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
